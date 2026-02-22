@@ -25,7 +25,7 @@ function submitAppointment(){
 
   if(name && phone && date){
     document.getElementById('appointmentResult').innerText = `Thank you ${name}! Your appointment for ${date} has been noted.`;
-    document.getElementById('appointmentForm').reset();
+    document.getElementById('https://wa.me/918858102095?text').reset();
   } else {
     document.getElementById('appointmentResult').innerText = `Please fill all fields.`;
   }
