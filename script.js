@@ -42,7 +42,14 @@ function submitAppointment(){
   const name = document.getElementById('name').value;
   const phone = document.getElementById('phone').value;
   const date = document.getElementById('date').value;
+if(name && phone && date){
+    // Encode message for WhatsApp
+    const message = `New BNYS4U Appointment:\nName: ${name}\nPhone: ${phone}\nPreferred Date: ${date}`;
+    const whatsappURL = `https://wa.me/918858102095?text=${encodeURIComponent(message)}`;
 
+    // Open WhatsApp link in new tab
+    window.open(whatsappURL, '_blank');
+  
   if(name && phone && date){
     document.getElementById('appointmentResult').innerText = `Thank you ${name}! Your appointment for ${date} has been noted.`;
     document.getElementById('appointmentForm').reset();
@@ -52,28 +59,4 @@ function submitAppointment(){
 }
 
 // Show home by default
-showSection('home');
-
-
-  if(name && phone && date){
-    // Encode message for WhatsApp
-    const message = `New BNYS4U Appointment:\nName: ${name}\nPhone: ${phone}\nPreferred Date: ${date}`;
-    const whatsappURL = `https://wa.me/918858102095?text=${encodeURIComponent(message)}`;
-
-    // Open WhatsApp link in new tab
-    window.open(whatsappURL, '_blank');
-
-    // Reset form and show confirmation
-    document.getElementById('appointmentForm').reset();
-    document.getElementById('appointmentResult').innerText = `Thank you ${name}! Your appointment request has been sent to WhatsApp.`;
-  } else {
-    document.getElementById('appointmentResult').innerText = `Please fill all fields.`;
-  }
-}
-  
-}
-
-// Show home by default
-showSection('home');
-
-
+showSection('home')
