@@ -33,3 +33,4 @@ function submitAppointment(){
 
 // Show home by default
 showSection('home');
+
